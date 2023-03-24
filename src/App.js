@@ -1,40 +1,40 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import CategoryList from './components/category-List/Category-List';
-
+import NavBar from './components/Nav-Bar/NavBar';
+import Category from './Pages/Category/Category';
+import CheckOut from './Pages/CheckOut/CheckOut';
+import Home from './Pages/Home/Home';
+import Shop from './Pages/Shop/Shop';
+import SignIn from './Pages/Sign-In/SingIn';
 
 const App = () => {
-  const categories = [
-    {
-      title: "Hats",
-      id: 1,
-      img: "https://i.ibb.co/cvpntL1/hats.png"
-    },
-    {
-      title: "Jackets",
-      id: 2,
-      img: "https://i.ibb.co/px2tCc3/jackets.png"
-    },
-    {
-      title: "Sneakers",
-      id: 3,
-      img: "https://i.ibb.co/0jqHpnp/sneakers.png"
-    },
-    {
-      title: "Womens",
-      id: 4,
-      img: "https://i.ibb.co/GCCdy8t/womens.png"
-    },
-    {
-      title: "Mens",
-      id: 5,
-      img: "https://i.ibb.co/R70vBrQ/men.png"
-    }
-  ]
-
   return (
-    <CategoryList
-    categories= {categories}
-    />
+    <>
+      <NavBar />
+      <Routes>
+        <Route
+          path='/'
+          element={<Home />}
+        />
+        <Route
+          path='/Shop'
+          element={<Shop />}
+        />
+        <Route
+          path='/SignIn'
+          element={<SignIn />}
+        />
+        <Route
+          path='/checkOut'
+          element={<CheckOut/>}
+        /> 
+         <Route
+          path='/Shop/:category'
+          element={<Category/>}
+        /> 
+      </Routes>
+
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React from "react";
 import CategoryItem from '../category-Item/category-item';
+import "./Category-List.css"
 
 const CategoryList= ({categories})=>{
     return(
